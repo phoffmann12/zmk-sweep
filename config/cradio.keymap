@@ -9,6 +9,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keymap_italian.h"
 
+#define HOST_OS 1
+#define ZMK_HELPER_KEEP_NATIVE 1
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/sofle.h"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+#include "zmk-helpers/unicode-chars/currency.dtsi"
+
 // Layer definitions
     #define BASE 0
     #define SYM 1
@@ -18,6 +25,49 @@
     #define ACCENT 5
 		#define SETTINGS 6
 // -----------------
+
+/* Global defaults */
+
+#define QUICK_TAP_MS 175
+
+&sk {
+  release-after-ms = <900>;
+  quick-release;
+};
+
+&sl { // Allow sticky mods to chord across sticky layers.
+  ignore-modifiers;
+};
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+
+/* Homerow mods */
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
+#ifndef LH2
+  #define THUMBS LH1 LH0 RH0 RH1         // Thumbs on 34 keys.
+#else
+  #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2 // Thumbs on 36+ keys.
+#endif
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
+  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
+               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+               hold-trigger-key-positions = <TRIGGER_POS>;)
+
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+
+&caps_word {
+        continue-list = <UNDERSCORE MINUS>;
+    };
 
 &mt {
    //  flavor = "tap-preferred";
@@ -70,9 +120,9 @@
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp E &kp R &kp T           &kp Z &kp U  &kp I     &kp O   &kp P
-		&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp IT_OGRV
-		&kp Y &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp IT_UGRV
-             &mo EXT &mt LSHIFT SPACE           &kp SPACE &sl SYM
+		&hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F   &kp G  		&kp H         &hmr LSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI SEMI
+		&kp Y &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
+             &mo EXT &mt LSHIFT SPACE           &kp ENTER &sl SYM
 		>;
 		};
 

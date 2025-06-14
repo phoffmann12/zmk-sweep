@@ -10,4 +10,4 @@ This layout is inspired by [Seniply by Stevep99](https://stevep99.github.io/seni
 </div>
 
 *This diagram was created using draw.io*  
-*Click [HERE](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=sweep-layout.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1eJrqAJkoFiEjM5GZY4EuauVtp0VhaR0j%26export%3Ddownload) to view a copy that you can edit*
+*Click [HERE](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=sweep-layout.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1eJrqAJkoFi
