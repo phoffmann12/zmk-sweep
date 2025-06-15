@@ -120,7 +120,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             compatible = "zmk,behavior-tap-dance";
             label = "U_MINUS";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <170>;
             bindings = <&kp U>, <&kp MINUS>;
         };
 
@@ -128,7 +128,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             compatible = "zmk,behavior-tap-dance";
             label = "I_PLUS";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <170>;
             bindings = <&kp I>, <&kp PLUS>;
         };
 
@@ -136,7 +136,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             compatible = "zmk,behavior-tap-dance";
             label = "O_QUOTE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <170>;
             bindings = <&kp O>, <&kp SQT>;
         };
 
@@ -144,7 +144,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             compatible = "zmk,behavior-tap-dance";
             label = "P_BSLH";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <170>;
             bindings = <&kp P>, <&kp BSLH>;
         };
     };
