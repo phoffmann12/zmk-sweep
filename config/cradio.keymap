@@ -120,7 +120,32 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             compatible = "zmk,behavior-tap-dance";
             label = "U_MINUS";
             #binding-cells = <0>;
+            tapping-term-ms = <100>;
             bindings = <&kp U>, <&kp MINUS>;
+        };
+
+        i_plus: i_plus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "I_PLUS";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp I>, <&kp PLUS>;
+        };
+
+        o_quote: o_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "O_QUOTE";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp O>, <&kp SQT>;
+        };
+
+        p_bslh: p_bslh {
+            compatible = "zmk,behavior-tap-dance";
+            label = "P_BSLH";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp P>, <&kp BSLH>;
         };
     };
 
@@ -131,7 +156,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp E         &kp R         &kp T               &kp Z      &u_minus         &kp I         &kp O        &kp P
+&kp Q        &kp W        &kp E         &kp R         &kp T               &kp Z      &u_minus         &i_plus         &o_quote        &p_bslh
 &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G               &kp H      &hmr LSHFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SEMI
 &kp Y        &kp X        &kp C         &kp V         &kp B               &kp N      &kp M         &kp COMMA     &kp DOT      &kp FSLH
                                         &mo EXT       &mt LSHIFT SPACE    &kp ENTER  &sl SYM
