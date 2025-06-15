@@ -124,12 +124,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
             bindings = <&kp U>, <&kp MINUS>;
         };
 
-        i_plus: i_plus {
+        i_equals: i_equals {
             compatible = "zmk,behavior-tap-dance";
             label = "I_PLUS";
             #binding-cells = <0>;
             tapping-term-ms = <170>;
-            bindings = <&kp I>, <&kp PLUS>;
+            bindings = <&kp I>, <&kp EQUAL>;
         };
 
         o_quote: o_quote {
@@ -156,7 +156,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp E         &kp R         &kp T               &kp Z      &u_minus         &i_plus         &o_quote        &p_bslh
+&kp Q        &kp W        &kp E         &kp R         &kp T               &kp Z      &u_minus         &i_equals         &o_quote        &p_bslh
 &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G               &kp H      &hmr LSHFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SEMI
 &kp Y        &kp X        &kp C         &kp V         &kp B               &kp N      &kp M         &kp COMMA     &kp DOT      &kp FSLH
                                         &mo EXT       &mt LSHIFT SPACE    &kp ENTER  &sl SYM
